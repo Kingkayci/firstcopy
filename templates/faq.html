@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/icon.png' %}" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/carousel.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}"/>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/laravel-notify.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+
+    <style>
+        .site-head-tag {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <title>FUND TECH TRADE- FAQ</title>
+</head>
+
+<body class="dark-theme">
+    <script>
+        var notify = {
+            timeout: "5000",
+        }
+    </script>
+    <!--Header Area-->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'basic_app:home' %}"><img src="{% static 'images/icon.png' %}" alt=""/></a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0 main-nav">
+                                                                            <li class="nav-item">
+                                    <a class="nav-link "
+                                   href="{% url 'basic_app:home' %}">Home</a>
+                            </li>
+                                                                                                <li class="nav-item">
+                                <a class="nav-link "
+                                   href="{% url 'basic_app:schema' %}">Schema</a>
+                            </li>
+                                                                                                <li class="nav-item">
+                                <a class="nav-link "
+                                   href="{% url 'basic_app:rankings' %}">Ranking</a>
+                            </li>
+                                                                                                <li class="nav-item">
+                                <a class="nav-link "
+                                   href="{% url 'basic_app:how-it-works' %}">How It Works</a>
+                            </li>
+                                                                                                <li class="nav-item">
+                                <a class="nav-link "
+                                   href="{% url 'basic_app:about-us' %}">About</a>
+                            </li>
+                                                                                                <li class="nav-item">
+                                <a class="nav-link "
+                                   href="{% url 'basic_app:blog' %}">Blog</a>
+                            </li>
+                                                                                                <li class="nav-item">
+                                <a class="nav-link "
+                                   href="{% url 'basic_app:contact' %}">Contact</a>
+                            </li>
+                                                
+                    </ul>
+                    <div class="header-right-btn">
+                                                <a href="{% url 'basic_app:register' %}" class="site-btn-sm primary-btn"><i class="fas fa-user"></i>Register</a>
+                            <a href="{% url 'basic_app:login' %}" class="site-btn-sm grad-btn ms-2"><i class="fa fa-sign-in"></i>Account</a>
+    
+                        
+                        <div class="color-switcher">
+                            <i icon-name="moon" class="dark-icon" data-mode="dark"></i>
+                            <i icon-name="sun" class="light-icon" data-mode="light"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+<!--/Header Area End-->
+
+    <!--page-head-->
+    <section class="page-head site-overlay"
+             style="background: url( https://valortechtrade.com/assets/global/images/YxeYfLzaEsagR8a7OWXw.jpg) no-repeat center top / cover;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 centered">
+                    <h2 data-aos="fade-down" data-aos-duration="2000">    FAQ Page
+</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--page-head End -->
+
+    
+    <section class="section-style">
+    <div class="bat-left" style="background: url(https://valortechtrade.com/assets) repeat;" data-aos="fade-down-right"
+         data-aos-duration="2000"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <div class="section-title centered">
+                    <h4 data-aos="fade-down" data-aos-duration="2000">sdfgsdfsd</h4>
+                    <h2 data-aos="fade-down" data-aos-duration="1500">Explore Your Questions</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-12">
+                <div class="faq-contents">
+                    <div class="accordion" id="accordionExample">
+                                                    <div class="accordion-item" data-aos="fade-down" data-aos-duration="1000">
+                                <h2 class="accordion-header" id="headingOne14">
+                                    <button class="accordion-button "
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne14" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        <span class="icon"><i class="fa-solid fa-check"></i></span>Is there an option for manual Deposit?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne14"
+                                     class="accordion-collapse collapse   show "
+                                     aria-labelledby="headingOne14" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="para">Yes, in the deposit section or please contact support.</div>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="accordion-item" data-aos="fade-down" data-aos-duration="1000">
+                                <h2 class="accordion-header" id="headingOne28">
+                                    <button class="accordion-button  collapsed "
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne28" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        <span class="icon"><i class="fa-solid fa-check"></i></span>How to Withdraw Money
+                                    </button>
+                                </h2>
+                                <div id="collapseOne28"
+                                     class="accordion-collapse collapse  "
+                                     aria-labelledby="headingOne28" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="para">Withdrawals are been made easier on your dashboard section.</div>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="accordion-item" data-aos="fade-down" data-aos-duration="1000">
+                                <h2 class="accordion-header" id="headingOne29">
+                                    <button class="accordion-button  collapsed "
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne29" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        <span class="icon"><i class="fa-solid fa-check"></i></span>How can I upgrade my Ranking
+                                    </button>
+                                </h2>
+                                <div id="collapseOne29"
+                                     class="accordion-collapse collapse  "
+                                     aria-labelledby="headingOne29" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="para">Returns of investment (ROI) are been upgraded automatically.</div>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <div class="accordion-item" data-aos="fade-down" data-aos-duration="1000">
+                                <h2 class="accordion-header" id="headingOne30">
+                                    <button class="accordion-button  collapsed "
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne30" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        <span class="icon"><i class="fa-solid fa-check"></i></span>How the Referral Levels works?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne30"
+                                     class="accordion-collapse collapse  "
+                                     aria-labelledby="headingOne30" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="para">Every user that refers a new user with his/her refer link gets to earn commissions from every deposit, profit and withdrawals from there referral.</div>
+                                    </div>
+                                </div>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-12">
+                    <div class="section-title text-center">
+                        <a href="{% url 'basic_app:contact' %}" target="_self"
+                           class="site-btn primary-btn"><i class="fa-solid fa-message"></i>Still No Luck?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section  -->
+    
+        
+        <section class="cta site-overlay"
+         style="background: url(https://valortechtrade.com/assets/global/images/udMk5L0YXsXBK3mgRJQX.jpg) no-repeat center center fixed;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-12">
+                <div class="headding" data-aos="fade-right" data-aos-duration="1500">
+                    <h2 class="white-color">
+                        We&#039;re a more than 1000+ members family, you can join with us with high confidence
+                    </h2>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-12">
+                <div class="btns" data-aos="fade-left" data-aos-duration="2000">
+                    <a href="{% url 'basic_app:register' %}" target="_self"
+                    class="site-btn primary-btn"><i class="fas fa-user"></i>Join Us</a>
+                 <a href="{% url 'basic_app:contact' %}" target="_self"
+                    class="site-btn"><i class="fa-solid fa-message"></i>Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- section end-->
+
+<!--Footer Area-->
+<footer class="footer dark-blue-bg section-style-2">
+    <div class="bat-right" style="background: url(https://valortechtrade.com/assets/global/images/GAH1nccf5XhjretvfsYT.png) repeat;"
+         data-aos="fade-down-left" data-aos-duration="2000"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="footer-widget" data-aos="fade-down" data-aos-duration="1000">
+                    <h4>About Hyiprio</h4>
+                    <p>
+                        High-performing and most popular Hyip Investment Platform in modern times. Full fill the most user needs and distribute maximum profits.
+                    </p>
+                    <div class="socials">
+                                                    <a href="https://www.facebook.com/hyiprio/"><i class="fab fa-facebook-f"></i></a>
+                                                    <a href="https://www.instagram.com/hyiprio"><i class="fab fa-instagram"></i></a>
+                                                    <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+                                                    <a href="https://discord.com"><i class="fab fa-discord"></i></a>
+                                            </div>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                <div class="row">
+
+                    
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                            <div class="footer-widget" data-aos="fade-down" data-aos-duration="1500">
+                                <h4>Base Navigation</h4>
+                                <div class="footer-nav">
+                                    <ul>
+                                                                                                                                    <li><a href="{% url 'basic_app:home' %}">Home</a></li>
+                                                                                                                                                                                <li><a href="{% url 'basic_app:login' %}">Account Login</a></li>
+                                                                                                                                                                                <li><a href="{% url 'basic_app:blog' %}">Blog</a></li>
+                                                                                                                                                                                <li><a href="{% url 'basic_app:contact' %}">Contact</a></li>
+                                                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                            <div class="footer-widget" data-aos="fade-down" data-aos-duration="1500">
+                                <h4>Important Links</h4>
+                                <div class="footer-nav">
+                                    <ul>
+                                                                                                                                    <li><a href="{% url 'basic_app:privacy' %}">Privacy</a></li>
+                                                                                                                                                                                <li><a href="{% url 'basic_app:rankings' %}">Ranking</a></li>
+                                                                                                                                                                                <li><a href="{% url 'basic_app:schema' %}">Schema</a></li>
+                                                                                                                                                                                <li><a href="{% url 'basic_app:faq' %}">FAQ</a></li>
+                                                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                            <div class="footer-widget" data-aos="fade-down" data-aos-duration="1500">
+                                <h4>Company Essentials</h4>
+                                <div class="footer-nav">
+                                    <ul>
+                                                                                                                                    <li><a href="{% url 'basic_app:terms' %}">Terms and Conditions</a></li>
+                                                                                                                                                                                <li><a href="{% url 'basic_app:about-us' %}">About</a></li>
+                                                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="copyright-text" data-aos="fade-down" data-aos-duration="3000">
+                    <p>
+                        Copyright ©Hyiprio 2022. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--Footer Area End-->
+
+<div class="caches-privacy cookiealert" hidden>
+        <div class="content">
+            <p>Please allow us to collect data about how you use our website. We will use it to improve our website, make your browsing experience and our business decisions better. Learn more <a href="{% url 'basic_app:privacy' %}"
+                                                    target="_blank">Learn More</a></p>
+        </div>
+        <button class="site-btn blue-btn acceptcookies">Accept All</button>
+    </div>
+
+
+    <script src="{% static 'javascript/jquery.min.js' %}"></script>
+    <script src="{% static 'javascript/jquery-migrate.js' %}"></script>
+    
+    <script src="{% static 'javascript/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'javascript/scrollUp.min.js' %}"></script>
+    
+    <script src="{% static 'javascript/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'javascript/waypoints.min.js' %}"></script>
+    <script src="{% static 'javascript/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'javascript/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'javascript/lucide.min.js' %}"></script>
+    <script src="{% static 'javascript/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'javascript/aos.js' %}"></script>
+    <script src="{% static 'javascript/datatables.min.js' %}" type="text/javascript" charset="utf8"></script>
+    <script src="{% static 'javascript/frontend.main.js' %}"></script>
+    <script src="{% static 'javascript/cookie.js' %}"></script>
+    <script src="{% static 'javascript/custom.js' %}"></script>
+
+
+    <script>
+        (function ($) {
+            'use strict';
+            // To top
+            $.scrollUp({
+                scrollText: '<i class="fas fa-caret-up"></i>',
+                easingType: 'linear',
+                scrollSpeed: 500,
+                animation: 'fade'
+            });
+        })(jQuery);
+    </script>
+
+<script type="text/javascript" src="{% static 'javascript/notify.js' %}"></script>     <script>
+        // Color Switcher
+        $(".color-switcher").on('click', function () {
+            "use strict"
+            $("body").toggleClass("dark-theme");
+            var url = 'https://valortechtrade.com/theme-mode';
+            $.get(url)
+        });
+    </script>
+
+
+</body>
+</html>

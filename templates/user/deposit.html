@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/icon.png' %}" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/carousel.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}"/>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/laravel-notify.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+
+    <style>
+        .site-head-tag {
+            margin: 0;
+            padding: 0;
+        }
+        #logout a { color: white; }
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
+        * { font-size: 0.92rem; font-family: 'Manrope', sans-serif;}
+       
+    </style>
+
+    <title>FUND TECH TRADE- Deposit</title>
+</head>
+
+<body class="dark-theme">
+    <script>
+        var notify = {
+            timeout: "5000",
+        }
+    </script>
+
+<!--Full Layout-->
+<div class="panel-layout">
+    <!--Header-->
+    <div class="panel-header">
+    <div class="logo">
+        <a href="{% url 'basic_app:home' %}">
+            <img class="logo-unfold" src="{% static 'images/icon.png' %}" alt="Logo"/>
+            <img class="logo-fold" src="{% static 'images/icon.png' %}" alt="Logo"/>
+        </a>
+    </div>
+    <div class="nav-wrap">
+        <div class="nav-left">
+
+            <button class="sidebar-toggle">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+        <div class="nav-right">
+            <div class="single-nav-right">
+                <a href="{% url 'basic_app:home' %}" class="user-home-menu">
+                    <i class="fas fa-home"></i>
+                </a>
+                <div class="single-right">
+                    <div class="color-switcher">
+                        <i icon-name="moon" class="dark-icon" data-mode="dark"></i>
+                        <i icon-name="sun" class="light-icon" data-mode="light"></i>
+                    </div>
+                </div>
+                <div class="single-right">
+                    <!-- <select name="language" id="" class="site-nice-select"
+                            onchange="window.location.href=this.options[this.selectedIndex].value;">
+                                                    <option
+                                value="https://valortechtrade.com/language-update?name=en" selected>English</option>
+                                                    <option
+                                value="https://valortechtrade.com/language-update?name=es" >Spanish</option>
+                                                    <option
+                                value="https://valortechtrade.com/language-update?name=fr" >France</option>
+                                            </select> -->
+                    <div id="google_translate_element"></div>                                       
+                
+                </div>
+
+                <div class="single-right">
+                    <button
+                        type="button"
+                        class="item"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        
+                        <li id="logout">
+                                <a href="{% url 'basic_app:logout' %}"><i class="fa-solid fa-power-off"></i>LOGOUT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Header-->
+
+    <!--Side Nav-->
+    <div class="side-nav">
+        <div class="side-wallet-box default-wallet mb-0">
+            <div class="user-balance-card">
+                <div class="wallet-name">
+                    <div class="name">Account Balance</div>
+                    <div class="default">Wallet</div>
+                </div>
+                <div class="wallet-info">
+                    <div class="wallet-id"><i icon-name="wallet"></i>Main Wallet</div>
+                    <div class="balance">${{ account_balance.deposit_main_wallet }}</div>
+                </div>
+                <div class="wallet-info">
+                    <div class="wallet-id"><i icon-name="landmark"></i>Profit Wallet</div>
+                    <div class="balance">${{ account_balance.deposit_profit_wallet }}</div>
+                </div>
+            </div>
+            <div class="actions">
+                <a href="{% url 'basic_app:user-deposit' %}" class="user-sidebar-btn">
+                    <i class="fa-solid fa-money-check-dollar"></i>Deposit</a>
+                <a href="{% url 'basic_app:user-schemas' %}" class="user-sidebar-btn red-btn">
+                    <i class="fa fa-sign-in"></i>Invest Now</a>
+            </div>
+        </div>
+        <div class="side-nav-inside">
+            <ul class="side-nav-menu">
+                <li class="side-nav-item">
+                    <a href="{% url 'basic_app:user-dashboard' %}">
+                        <i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
+                </li>
+    
+                <li class="side-nav-item">
+                    <a href="{% url 'basic_app:user-schemas' %}">
+                        <i class="fa-regular fa-square-check"></i><span>All Schema</span></a>
+                </li>
+                <li class="side-nav-item ">
+                    <a href="{% url 'basic_app:user-schema-logs' %}">
+                        <i class="fa-solid fa-copy"></i><span>Schema Logs</span></a>
+                </li>
+    
+                <li class="side-nav-item ">
+                    <a href="{% url 'basic_app:user-transactions' %}">
+                        <i class="fa-solid fa-inbox"></i><span>All Transactions</span></a>
+                </li>
+    
+    
+                <li class="side-nav-item  active">
+                    <a href="{% url 'basic_app:user-deposit' %}">
+                        <i class="fa-solid fa-money-check-dollar"></i><span>Add Money</span></a>
+                </li>
+                <li class="side-nav-item ">
+                    <a href="{% url 'basic_app:user-deposit-logs' %}">
+                        <i class="fa-solid fa-money-bill"></i><span>Add Money Log</span></a>
+                </li>
+    
+                <!-- <li class="side-nav-item ">
+                    <a href="https://valortechtrade.com/user/wallet-exchange">
+                        <i class="fa-solid fa-money-bill-transfer"></i><span>Wallet Exchange</span></a>
+                </li>
+    
+                <li class="side-nav-item   ">
+                    <a href="https://valortechtrade.com/user/send-money">
+                        <i class="fa-solid fa-money-check-dollar"></i><span>Send Money</span></a>
+                </li>
+                <li class="side-nav-item ">
+                    <a href="https://valortechtrade.com/user/send-money/log">
+                        <i class="fa-solid fa-cloud"></i><span>Send Money Log</span></a>
+                </li> -->
+    
+                <li class="side-nav-item   ">
+                    <a href="{% url 'basic_app:user-withdraw' %}">
+                        <i class="fa-solid fa-building-columns"></i><span>Withdraw</span></a>
+                </li>
+                <li class="side-nav-item ">
+                    <a href="{% url 'basic_app:user-withdraw-logs' %}">
+                        <i class="fa-solid fa-credit-card"></i><span>Withdraw Logs</span></a>
+                </li>
+    
+                <li class="side-nav-item ">
+                    <a href="{% url 'basic_app:user-ranking' %}">
+                        <i class="fa-solid fa-star"></i><span>Ranking Badge</span></a>
+                </li>
+    
+                                <li class="side-nav-item ">
+                        <a href="{% url 'basic_app:user-referral' %}">
+                            <i class="fa-solid fa-people-group"></i><span>Referral</span></a>
+                    </li>
+                
+                
+                <li class="side-nav-item">
+                    <a href="{% url 'basic_app:logout' %}"><i class="fa-solid fa-power-off"></i>LOGOUT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!--/Side Nav-->
+
+        <div class="page-container">
+            <div class="main-content">
+                <div class="section-gap">
+                    <div class="container-fluid">
+                                                
+                            <div class="row">
+            <div class="col">
+                <div class="alert site-alert alert-dismissible fade show" role="alert">
+                    <div class="content">
+                        <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                                <span class="kyc-need">You need to submit your
+                                                    <span class="kyc-doc">KYC and Other Documents.</span></span>
+                                        </div>
+                                        <div class="action">
+                            <a href="{% url 'basic_app:kyc' %}" class="site-btn-sm grad-btn">
+                                <i class="fa-solid fa-circle-exclamation"></i>Submit Now</a>
+                            <a href="" class="site-btn-sm red-btn ms-2" type="button" data-bs-dismiss="alert"
+                               aria-label="Close"><i class="fa-solid fa-xmark"></i>Later</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="site-card">
+                    <div class="site-card-header">
+                        <h3 class="title">Add Money</h3>
+                        <div class="card-header-links">
+                            <a href="{% url 'basic_app:user-deposit-logs' %}"
+                               class="card-header-link">Deposit History</a>
+                        </div>
+                    </div>
+                    <div class="site-card-body">
+                        <div class="progress-steps">
+                            <div class="single-step current">
+                                <div class="number">01</div>
+                                <div class="content">
+                                    <h4>Deposit USDT wallet address</h4>
+                                    <input type="text" value="usdt" class="w-address" id="refLink1"/>
+                                    <button type="submit" onclick="copyRef1()">
+                                        <i class="fas fa-copy"></i>
+                                        <span class="address-copy" id="copy">Copy</span>
+                                        <input id="copied" hidden value="Copied">
+                                    </button>
+                                </div> 
+                            </div>
+                            <div class="single-step current">
+                                <div class="number">02</div>
+                                <div class="content">
+                                    <h4>Deposit ETH wallet address</h4>
+                                    <input type="text" value="ethereum" class="w-address" id="refLink2"/>
+                                    <button type="submit" onclick="copyRef2()">
+                                        <i class="fas fa-copy"></i>
+                                        <span class="address-copy" id="copy">Copy</span>
+                                        <input id="copied" hidden value="Copied">
+                                    </button>
+                                </div> 
+                            </div>
+                            <div class="single-step current">
+                                <div class="number">03</div>
+                                <div class="content">
+                                    <h4>Deposit BTC wallet address</h4>
+                                    <input type="text" value="bitcoin" class="w-address" id="refLink3"/>
+                                    <button type="submit" onclick="copyRef3()">
+                                        <i class="fas fa-copy"></i>
+                                        <span class="address-copy" id="copy">Copy</span>
+                                        <input id="copied" hidden value="Copied">
+                                    </button>
+                                </div> 
+                            </div>
+                        </div>
+
+                        <div class="upload-receipt">
+                            <h2>Confirm Payment</h2>
+                            <h5>Please make sure to enter your username <span class="username-name">({{ user.username }})</span></h5>
+                            <div class="profit-body">
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {{ receipt_form.as_p }}
+                                    <div class="receipt-btn">
+                                        <button type="submit" class="site-btn blue-btn mt-3">Upload Receipt</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+</div>
+</div>
+
+
+<!-- Automatic Popup -->
+
+<!-- /Automatic Popup End -->
+</div>
+<!--/Full Layout-->
+
+<script src="{% static 'javascript/jquery.min.js' %}"></script>
+    <script src="{% static 'javascript/jquery-migrate.js' %}"></script>
+    
+    <script src="{% static 'javascript/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'javascript/scrollUp.min.js' %}"></script>
+    
+    <script src="{% static 'javascript/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'javascript/waypoints.min.js' %}"></script>
+    <script src="{% static 'javascript/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'javascript/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'javascript/lucide.min.js' %}"></script>
+    <script src="{% static 'javascript/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'javascript/aos.js' %}"></script>
+    <script src="{% static 'javascript/datatables.min.js' %}" type="text/javascript" charset="utf8"></script>
+    <script src="{% static 'javascript/frontend.main.js' %}"></script>
+    <script src="{% static 'javascript/cookie.js' %}"></script>
+    <script src="{% static 'javascript/custom.js' %}"></script>
+
+
+
+<script>
+(function ($) {
+'use strict';
+// To top
+$.scrollUp({
+    scrollText: '<i class="fas fa-caret-up"></i>',
+    easingType: 'linear',
+    scrollSpeed: 500,
+    animation: 'fade'
+});
+})(jQuery);
+</script>
+
+<script type="text/javascript" src="{% static 'javascript/notify.js' %}"></script>    
+<script>
+function copyRef1() {
+/* Get the text field */
+var copyApi = document.getElementById("refLink1");
+/* Select the text field */
+copyApi.select();
+copyApi.setSelectionRange(0, 999999999); /* For mobile devices */
+/* Copy the text inside the text field */
+document.execCommand('copy');
+alert('USDT Address has been copied to the clipboard');
+
+}
+</script>
+
+<script>
+    function copyRef2() {
+    /* Get the text field */
+    var copyApi = document.getElementById("refLink2");
+    /* Select the text field */
+    copyApi.select();
+    copyApi.setSelectionRange(0, 999999999); /* For mobile devices */
+    /* Copy the text inside the text field */
+    document.execCommand('copy');
+    alert('ETH Address has been copied to the clipboard');
+    
+    }
+    </script>
+
+<script>
+    function copyRef3() {
+    /* Get the text field */
+    var copyApi = document.getElementById("refLink3");
+    /* Select the text field */
+    copyApi.select();
+    copyApi.setSelectionRange(0, 999999999); /* For mobile devices */
+    /* Copy the text inside the text field */
+    document.execCommand('copy');
+    alert('BTC Address has been copied to the clipboard');
+    
+    }
+    </script>
+
+
+<script>
+// Color Switcher
+$(".color-switcher").on('click', function () {
+"use strict"
+$("body").toggleClass("dark-theme");
+var url = 'https://valortechtrade.com/theme-mode';
+$.get(url)
+});
+</script>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/icon.png' %}" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/carousel.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}"/>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/laravel-notify.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+
+    <style>
+        .site-head-tag {
+            margin: 0;
+            padding: 0;
+        }
+        #logout a { color: white; }
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
+        * { font-size: 0.92rem; font-family: 'Manrope', sans-serif;}     
+       
+    </style>
+
+    <title>FUND TECH TRADE- Dashboard</title>
+</head>
+
+<body class="dark-theme">
+    <script>
+        var notify = {
+            timeout: "5000",
+        }
+    </script>
+
+<!--Full Layout-->
+<div class="panel-layout">
+    <!--Header-->
+    <div class="panel-header">
+    <div class="logo">
+        <a href="{% url 'basic_app:home' %}">
+            <img class="logo-unfold" src="{% static 'images/icon.png' %}" alt="Logo"/>
+            <img class="logo-fold" src="{% static 'images/icon.png' %}" alt="Logo"/>
+        </a>
+    </div>
+    <div class="nav-wrap">
+        <div class="nav-left">
+
+            <button class="sidebar-toggle">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+        <div class="nav-right">
+            <div class="single-nav-right">
+                <a href="{% url 'basic_app:home' %}" class="user-home-menu">
+                    <i class="fas fa-home"></i>
+                </a>
+                <div class="single-right">
+                    <div class="color-switcher">
+                        <i icon-name="moon" class="dark-icon" data-mode="dark"></i>
+                        <i icon-name="sun" class="light-icon" data-mode="light"></i>
+                    </div>
+                </div>
+                <div class="single-right">
+                    <!-- <select name="language" id="" class="site-nice-select"
+                            onchange="window.location.href=this.options[this.selectedIndex].value;">
+                                                    <option
+                                value="https://valortechtrade.com/language-update?name=en" selected>English</option>
+                                                    <option
+                                value="https://valortechtrade.com/language-update?name=es" >Spanish</option>
+                                                    <option
+                                value="https://valortechtrade.com/language-update?name=fr" >France</option>
+                                            </select> -->
+                    <div id="google_translate_element"></div>                                       
+                
+                </div>
+
+                <div class="single-right">
+                    <button
+                        type="button"
+                        class="item"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li id="logout">
+                                <a href="{% url 'basic_app:logout' %}"><i class="fa-solid fa-power-off"></i>LOGOUT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--/Header-->
+
+    <!--Side Nav-->
+    <div class="side-nav">
+    <div class="side-wallet-box default-wallet mb-0">
+        <div class="user-balance-card">
+            <div class="wallet-name">
+                <div class="name">Account Balance</div>
+                <div class="default">Wallet</div>
+            </div>
+            <div class="wallet-info">
+                <div class="wallet-id"><i icon-name="wallet"></i>Main Wallet</div>
+                <div class="balance">${{ account_balance.dashboard_main_wallet }}</div>
+            </div>
+            <div class="wallet-info">
+                <div class="wallet-id"><i icon-name="landmark"></i>Profit Wallet</div>
+                <div class="balance">${{ account_balance.dashboard_profit_wallet }}</div>
+            </div>
+        </div>
+        <div class="actions">
+            <a href="{% url 'basic_app:user-deposit' %}" class="user-sidebar-btn">
+                <i class="fa-solid fa-money-check-dollar"></i>Deposit</a>
+            <a href="{% url 'basic_app:user-schemas' %}" class="user-sidebar-btn red-btn">
+                <i class="fa fa-sign-in"></i>Invest Now</a>
+        </div>
+    </div>
+    <div class="side-nav-inside">
+        <ul class="side-nav-menu">
+            <li class="side-nav-item active">
+                <a href="{% url 'basic_app:user-dashboard' %}">
+                    <i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
+            </li>
+
+            <li class="side-nav-item ">
+                <a href="{% url 'basic_app:user-schemas' %}">
+                    <i class="fa-regular fa-square-check"></i><span>All Schema</span></a>
+            </li>
+            <li class="side-nav-item ">
+                <a href="{% url 'basic_app:user-schema-logs' %}">
+                    <i class="fa-solid fa-copy"></i><span>Schema Logs</span></a>
+            </li>
+
+            <li class="side-nav-item ">
+                <a href="{% url 'basic_app:user-transactions' %}">
+                    <i class="fa-solid fa-inbox"></i><span>All Transactions</span></a>
+            </li>
+
+
+            <li class="side-nav-item   ">
+                <a href="{% url 'basic_app:user-deposit' %}">
+                    <i class="fa-solid fa-money-check-dollar"></i><span>Add Money</span></a>
+            </li>
+            <li class="side-nav-item ">
+                <a href="{% url 'basic_app:user-deposit-logs' %}">
+                    <i class="fa-solid fa-money-bill"></i><span>Add Money Log</span></a>
+            </li>
+
+            <!-- <li class="side-nav-item ">
+                <a href="https://valortechtrade.com/user/wallet-exchange">
+                    <i class="fa-solid fa-money-bill-transfer"></i><span>Wallet Exchange</span></a>
+            </li>
+
+            <li class="side-nav-item   ">
+                <a href="https://valortechtrade.com/user/send-money">
+                    <i class="fa-solid fa-money-check-dollar"></i><span>Send Money</span></a>
+            </li>
+            <li class="side-nav-item ">
+                <a href="https://valortechtrade.com/user/send-money/log">
+                    <i class="fa-solid fa-cloud"></i><span>Send Money Log</span></a>
+            </li> -->
+
+            <li class="side-nav-item   ">
+                <a href="{% url 'basic_app:user-withdraw' %}">
+                    <i class="fa-solid fa-building-columns"></i><span>Withdraw</span></a>
+            </li>
+            <li class="side-nav-item ">
+                <a href="{% url 'basic_app:user-withdraw-logs' %}">
+                    <i class="fa-solid fa-credit-card"></i><span>Withdraw Logs</span></a>
+            </li>
+
+
+            <li class="side-nav-item ">
+                <a href="{% url 'basic_app:user-ranking' %}">
+                    <i class="fa-solid fa-star"></i><span>Ranking Badge</span></a>
+            </li>
+
+                            <li class="side-nav-item ">
+                    <a href="{% url 'basic_app:user-referral' %}">
+                        <i class="fa-solid fa-people-group"></i><span>Referral</span></a>
+                </li>
+            
+           
+            <li class="side-nav-item">
+                <a href="{% url 'basic_app:logout' %}"><i class="fa-solid fa-power-off"></i>LOGOUT</a>
+            </li>
+        </ul>
+    </div>
+</div>
+    <!--/Side Nav-->
+
+    <div class="page-container">
+        <div class="main-content">
+            <div class="section-gap">
+                <div class="container-fluid">
+                                            
+                        <div class="row">
+        <div class="col">
+            <div class="alert site-alert alert-dismissible fade show" role="alert">
+                <div class="content">
+                    <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                            <span class="kyc-need">You need to submit your
+                        <span class="kyc-doc">KYC and Other Documents.</span></span>
+                                    </div>
+                                    <div class="action">
+                        <a href="{% url 'basic_app:kyc' %}" class="site-btn-sm grad-btn">
+                            <i class="fa-solid fa-circle-exclamation"></i>Submit Now</a>
+                        <a href="" class="site-btn-sm red-btn ms-2" type="button" data-bs-dismiss="alert"
+                           aria-label="Close"><i class="fa-solid fa-xmark"></i>Later</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+                                        <!--Page Content-->
+                    
+    
+    <div class="row">
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+        <div class="user-ranking" >
+            <h4>Level 1</h4>
+            <p>Hyip Member</p>
+            <div class="rank" data-bs-toggle="tooltip" data-bs-placement="top" title="By signing up to the account">
+                <img src="{% static 'images/ud-hyip.svg' %}" alt="">
+            </div>
+        </div>
+    </div>
+            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
+            <div class="site-card">
+                <div class="site-card-header">
+                    <h3 class="title">Referral Code</h3>
+                </div>
+                <div class="site-card-body">
+                    <div class="referral-link">
+                        <div class="referral-link-form">
+                            <input type="text" value="ref=c068447e-ac68-11ee-a34f-9df393c7e6b3-{{user.username}}" id="refLink"/>
+                            <button type="submit" onclick="copyRef()">
+                                <i class="fas fa-copy"></i>
+                                <span id="copy">Copy Url</span>
+                                <input id="copied" hidden value="Copied">
+                            </button>
+                        </div>
+                        <p class="referral-joined">
+                            0 peoples are joined by using this URL
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</div>
+
+    
+    <div class="row user-cards">
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"><i class="fa-solid fa-inbox"></i></div>
+            <div class="content">
+                <h4><span class="count">{{ account_balance.dash_all_transactions }}</span></h4>
+                <p>All Transactions</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"> <i class="fa-solid fa-money-check-dollar"></i></div>
+            <div class="content">
+                <h4><b>$</b><span class="count">{{ account_balance.dash_total_deposit }}</span></h4>
+                <p>Total Deposit</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"><i class="fa-regular fa-square-check"></i></div>
+            <div class="content">
+                <h4><b>$</b><span class="count">{{ account_balance.dash_total_investment }}</span></h4>
+                <p>Total Investment</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"><i class="fa-solid fa-credit-card"></i></div>
+            <div class="content">
+                <h4><b>$</b><span class="count">{{ account_balance.dash_total_profit }}</span></h4>
+                <p>Total Profit</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"><i class="fa-solid fa-arrow-right-to-city"></i></div>
+            <div class="content">
+                <h4><b>$</b><span class="count">{{ account_balance.dash_total_transfer }}</span></h4>
+                <p>Total Transfer </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+            <div class="content">
+                <h4><b>$</b><span class="count">{{ account_balance.dash_total_withdraw }}</span></h4>
+                <p>Total Withdraw</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"><i class="fa-solid fa-gift"></i></div>
+            <div class="content">
+                <h4><b>$</b><span class="count">{{ account_balance.dash_referral_bonus }}</span>
+                </h4>
+                <p>Referral Bonus</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"><i class="fa-solid fa-file-invoice"></i></div>
+            <div class="content">
+                <h4><b>$</b><span class="count">{{ account_balance.dash_deposit_bonus }}</span></h4>
+                <p>Signup Bonus</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"><i class="fa-solid fa-gift"></i></div>
+            <div class="content">
+                <h4><b>$</b><span class="count">{{ dash_investment_bonus }}</span></h4>
+                <p>Investment Bonus</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"><i class="fa-solid fa-inbox"></i></div>
+            <div class="content">
+                <h4 class="count">{{ account_balance.dash_total_referral }}</h4>
+                <p>Total Referral</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"><i class="fa-solid fa-ranking-star"></i></div>
+            <div class="content">
+                <h4 class="count">{{ account_balance.dash_rank_achieved }}</h4>
+                <p>Rank Achieved</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="single">
+            <div class="icon"><i class="fa-solid fa-ticket"></i></div>
+            <div class="content">
+                <h4 class="count">{{ account_balance.dash_total_ticket }}</h4>
+                <p>Total Ticket</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div class="row">
+    <div class="col-xl-12">
+        <div class="site-card">
+            <div class="site-card-header">
+                <h3 class="title">Recent Transactions</h3>
+            </div>
+            <div class="site-card-body table-responsive">
+                <div class="site-datatable">
+                    <table class="display data-table">
+                        <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Transactions ID</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Fee</th>
+                            <th>Status</th>
+                            <th>Gateway</th>
+                        </tr>
+
+                        <tr class="p-center">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="p-center">
+                            <td><i class="fa-solid fa-gift"></i> &nbsp;{{ account_balance.dash_description_default }}</td>
+                            <td>{{ account_balance.dash_transactionID_default }}</td>
+                            <td class="signup-bonus">{{ account_balance.dash_type }}</td>
+                            <td class="plus-usd">{{ account_balance.dash_amount }}</td>
+                            <td>{{ account_balance.dash_fee }}</td>
+                            <td class="plus-usd">{{ account_balance.dash_status }}</td>
+                            <td>{{ account_balance.dash_gateway }}</td>
+                        </tr>
+                        <tr class="p-center">
+                            <td>{{ account_balance.dash_description1 }}</td>
+                            <td>{{ account_balance.dash_transactionID1 }}</td>
+                            <td class="signup-bonus">{{ account_balance.dash_type1 }}</td>
+                            <td class="plus-usd">{{ account_balance.dash_amount1 }}</td>
+                            <td>{{ account_balance.dash_fee1 }}</td>
+                            <td class="plus-usd">{{ account_balance.dash_status1 }}</td>
+                            <td>{{ account_balance.dash_gateway1 }}</td>
+                        </tr>
+                        <tr class="p-center">
+                            <td>{{ account_balance.dash_description2 }}</td>
+                            <td>{{ account_balance.dash_transactionID2 }}</td>
+                            <td class="signup-bonus">{{ account_balance.dash_type2 }}</td>
+                            <td class="plus-usd">{{ account_balance.dash_amount2 }}</td>
+                            <td>{{ account_balance.dash_fee2 }}</td>
+                            <td class="plus-usd">{{ account_balance.dash_status2 }}</td>
+                            <td>{{ account_balance.dash_gateway2 }}</td>
+                        </tr>
+                         <tr class="p-center">
+                            <td>{{ account_balance.dash_description3 }}</td>
+                            <td>{{ account_balance.dash_transactionID3 }}</td>
+                            <td class="signup-bonus">{{ account_balance.dash_type3 }}</td>
+                            <td class="plus-usd">{{ account_balance.dash_amount3 }}</td>
+                            <td>{{ account_balance.dash_fee3 }}</td>
+                            <td class="plus-usd">{{ account_balance.dash_status3 }}</td>
+                            <td>{{ account_balance.dash_gateway3 }}</td>
+                        </tr>
+                        <tr class="p-center">
+                            <td>{{ account_balance.dash_description4 }}</td>
+                            <td>{{ account_balance.dash_transactionID4 }}</td>
+                            <td class="signup-bonus">{{ account_balance.dash_type4 }}</td>
+                            <td class="plus-usd">{{ account_balance.dash_amount4 }}</td>
+                            <td>{{ account_balance.dash_fee4 }}</td>
+                            <td class="plus-usd">{{ account_balance.dash_status4 }}</td>
+                            <td>{{ account_balance.dash_gateway4 }}</td>
+                        </tr>
+                        </thead>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    <!--Page Content-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   <!-- Automatic Popup -->
+   <div id="auto-popup" class="auto-popup-section">
+    <div class="auto-popup-dialog animated fadeInUp">
+        <a href="{% url 'basic_app:login' %}"><button class="auto-popup-close auto-popup-close-now"><i icon-name="x"></i></button></a>
+        <div class="auto-popup-dialog-inner"
+             style="background: url(https://valortechtrade.com/assets/frontend/images/auto-pop.jpg) no-repeat;">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <div class="auto-pop-content">
+                        <h2>Congratulations!</h2>
+                        <h3>You got a Signup Bonus
+                            <span>5 USD</span></h3> 
+                        <h2>Login your account to see bonus</h2>
+                            <a href="{% url 'basic_app:login' %}"><button class="site-btn grad-btn auto-popup-close-now"><i
+                                class="fas fa-check"></i> Got it</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- /Automatic Popup End -->
+</div>
+<!--/Full Layout-->
+
+<script src="{% static 'javascript/jquery.min.js' %}"></script>
+    <script src="{% static 'javascript/jquery-migrate.js' %}"></script>
+    
+    <script src="{% static 'javascript/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'javascript/scrollUp.min.js' %}"></script>
+    
+    <script src="{% static 'javascript/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'javascript/waypoints.min.js' %}"></script>
+    <script src="{% static 'javascript/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'javascript/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'javascript/lucide.min.js' %}"></script>
+    <script src="{% static 'javascript/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'javascript/aos.js' %}"></script>
+    <script src="{% static 'javascript/datatables.min.js' %}" type="text/javascript" charset="utf8"></script>
+    <script src="{% static 'javascript/frontend.main.js' %}"></script>
+    <script src="{% static 'javascript/cookie.js' %}"></script>
+    <script src="{% static 'javascript/custom.js' %}"></script>
+
+
+    <script>
+        (function ($) {
+            'use strict';
+            // To top
+            $.scrollUp({
+                scrollText: '<i class="fas fa-caret-up"></i>',
+                easingType: 'linear',
+                scrollSpeed: 500,
+                animation: 'fade'
+            });
+        })(jQuery);
+    </script>
+
+<script type="text/javascript" src="{% static 'javascript/notify.js' %}"></script>     <script>
+        function copyRef() {
+            /* Get the text field */
+            var copyApi = document.getElementById("refLink");
+            /* Select the text field */
+            copyApi.select();
+            copyApi.setSelectionRange(0, 999999999); /* For mobile devices */
+            /* Copy the text inside the text field */
+            document.execCommand('copy');
+            $('#copy').text($('#copied').val())
+
+        }
+    </script>
+    <script>
+        // Color Switcher
+        $(".color-switcher").on('click', function () {
+            "use strict"
+            $("body").toggleClass("dark-theme");
+            var url = 'https://valortechtrade.com/theme-mode';
+            $.get(url)
+        });
+    </script>
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- Your existing script -->
+<script>
+    $(document).ready(function() {
+       'use strict';
+       // Auto Popup
+       $('.auto-popup-close-now').on('click', function () {
+          var $this = $(this),
+              $popup = $this.closest('#auto-popup'),
+              $dialog = $this.parent('.auto-popup-dialog');
+          $popup.addClass('close');
+          $dialog.removeClass('fadeInUp').addClass('fadeOutUp');
+       });
+    });
+ </script>
+ 
+
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
+

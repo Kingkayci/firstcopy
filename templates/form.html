@@ -22,10 +22,10 @@
         .site-head-tag { margin: 0; padding: 0; }
         .site-nice-select { color: rgb(128, 124, 124); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
         .messages ul li { color: red; }
-        
+
     </style>
 
-    <title>FUND TECH TRADE- Register</title>
+    <title>AIM CAPITAL MARKET- Register</title>
 </head>
 
 <body class="dark-theme">
@@ -46,9 +46,9 @@
                         </div>
                         <div class="title">
                             <h2> 💪 Create an account</h2>
-                            <p>Register to continue with fund tech trade</p>
+                            <p>Register to continue with Aim Capital Market</p>
                         </div>
-                        
+
 
                         {% if form.errors %}
                         <div class="messages">
@@ -59,14 +59,14 @@
                         </div>
                         {% endif %}
 
-                        <div class="site-auth-form">                            
+                        <div class="site-auth-form">
                             <form method="POST" class="row">
                                 {% csrf_token %}
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                     <div class="single-field">
                                         <label class="box-label" for="firstname">Enter Full Name<span
                                             class="required-field">*</span></label>
-                                        {{ form.first_name }}  
+                                        {{ form.first_name }}
                                     </div>
                                 </div>
 
@@ -74,7 +74,7 @@
                                     <div class="single-field">
                                         <label class="box-label" for="email">Email Address<span
                                             class="required-field">*</span></label>
-                                        {{ form.email }}  
+                                        {{ form.email }}
                                     </div>
                                 </div>
 
@@ -82,14 +82,14 @@
                                     <div class="single-field">
                                         <label class="box-label" for="username">User Name<span
                                             class="required-field">*</span></label>
-                                        {{ form.username }}  
+                                        {{ form.username }}
                                     </div>
                                 </div>
 
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                     <div class="single-field">
                                         <label class="box-label" for="lastname">Optional Referral code</label>
-                                        {{ form.last_name }}  
+                                        {{ form.last_name }}
                                     </div>
                                 </div>
 
@@ -790,7 +790,7 @@
                                                                                             <option  value="United Kingdom:+44">
                                                     United Kingdom
                                                 </option>
-                                                                                            <option  value="United States:+1">
+                                                                                            <option selected value="United States:+1">
                                                     United States
                                                 </option>
                                                                                             <option  value="Uruguay:+598">
@@ -826,7 +826,7 @@
                                                                                             <option  value="Zimbabwe:+263">
                                                     Zimbabwe
                                                 </option>
-                                            
+
                                         </select>
 
                                     </div>
@@ -836,7 +836,7 @@
                                         <label class="box-label" for="username">Phone Number<span
                                                 class="required-field">*</span></label>
                                         <div class="input-group joint-input"><span class="input-group-text"
-                                                                                   id="dial-code">+234</span>
+                                                                                   id="dial-code">+1</span>
                                             <input
                                                 type="text"
                                                 class="form-control"
@@ -850,19 +850,19 @@
                                     </div>
                                 </div>
 
-                                
+
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                     <div class="single-field">
                                         <label class="box-label" for="password1">Password<span
                                             class="required-field">*</span></label>
-                                        {{ form.password1 }}  
+                                        {{ form.password1 }}
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                     <div class="single-field">
                                         <label class="box-label" for="password2">Confirm Password<span
                                             class="required-field">*</span></label>
-                                        {{ form.password2 }}  
+                                        {{ form.password2 }}
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-12">
@@ -908,10 +908,10 @@
 
     <script src="{% static 'javascript/jquery.min.js' %}"></script>
     <script src="{% static 'javascript/jquery-migrate.js' %}"></script>
-    
+
     <script src="{% static 'javascript/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'javascript/scrollUp.min.js' %}"></script>
-    
+
     <script src="{% static 'javascript/owl.carousel.min.js' %}"></script>
     <script src="{% static 'javascript/waypoints.min.js' %}"></script>
     <script src="{% static 'javascript/jquery.counterup.min.js' %}"></script>
@@ -958,6 +958,20 @@
     }, 4000); // Adjust the time (in milliseconds) as needed
 </script>
 
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/675866e8af5bfec1dbd9e469/1ieol3vh8';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 
 </body>
 </html>

@@ -24,11 +24,11 @@
         }
         #logout a { color: white; }
         @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
-        * { font-size: 0.92rem; font-family: 'Manrope', sans-serif;}     
-       
+        * { font-size: 0.92rem; font-family: 'Manrope', sans-serif;}
+
     </style>
 
-    <title>FUND TECH TRADE- Upload KYC</title>
+    <title>AIM CAPITAL MARKET- Upload KYC</title>
 </head>
 
 <body class="dark-theme">
@@ -76,8 +76,8 @@
                                                     <option
                                 value="https://valortechtrade.com/language-update?name=fr" >France</option>
                                             </select> -->
-                    <div id="google_translate_element"></div>                                       
-                
+                    <div id="google_translate_element"></div>
+
                 </div>
 
                 <div class="single-right">
@@ -90,7 +90,7 @@
                         <i class="fas fa-user"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                    
+
                         <li id="logout">
                                 <a href="{% url 'basic_app:logout' %}"><i class="fa-solid fa-power-off"></i>LOGOUT</a>
                         </li>
@@ -190,8 +190,8 @@
                     <a href="{% url 'basic_app:user-referral' %}">
                         <i class="fa-solid fa-people-group"></i><span>Referral</span></a>
                 </li>
-            
-            
+
+
             <li class="side-nav-item">
                 <a href="{% url 'basic_app:logout' %}"><i class="fa-solid fa-power-off"></i>LOGOUT</a>
             </li>
@@ -204,7 +204,7 @@
         <div class="main-content">
             <div class="section-gap">
                 <div class="container-fluid">
-                                            
+
                         <div class="row">
         <div class="col">
             <div class="alert site-alert alert-dismissible fade show" role="alert">
@@ -237,7 +237,7 @@
                                     <div class="input-group">
                                         <div class="upload-receipt">
                                             <h5>KYC Verification- Upload documents below to get verified</h5>
-                                            <h5>Valid identity card. (e.g. Drivers licence, international passport or any government approved document).</h5> 
+                                            <h5>Valid identity card. (e.g. Drivers licence, international passport or any government approved document).</h5>
                                             <br>
                                             <form method="POST" enctype="multipart/form-data">
                                                 {% csrf_token %}
@@ -247,13 +247,13 @@
                                                 </div>
                                             </form>
                                         </div>
-                                            
+
                                     </div>
                                 </div>
 
                             </div>
 
-                            
+
                 </div>
             </div>
         </div>
@@ -266,10 +266,10 @@
 
     <script src="{% static 'javascript/jquery.min.js' %}"></script>
     <script src="{% static 'javascript/jquery-migrate.js' %}"></script>
-    
+
     <script src="{% static 'javascript/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'javascript/scrollUp.min.js' %}"></script>
-    
+
     <script src="{% static 'javascript/owl.carousel.min.js' %}"></script>
     <script src="{% static 'javascript/waypoints.min.js' %}"></script>
     <script src="{% static 'javascript/jquery.counterup.min.js' %}"></script>
@@ -362,5 +362,19 @@
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/675866e8af5bfec1dbd9e469/1ieol3vh8';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>

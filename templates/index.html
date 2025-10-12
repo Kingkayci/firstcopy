@@ -24,7 +24,7 @@
         }
     </style>
 
-    <title>FUND TECH TRADE- Home</title>
+    <title>AIM CAPITAL MARKET - Home</title>
 </head>
 
 <body class="dark-theme">
@@ -33,8 +33,75 @@
             timeout: "5000",
         }
     </script>
+
+
     <!--Header Area-->
     <header class="header">
+         <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text"></span></a></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols": [
+      {
+        "description": "bitcoin",
+        "proName": "BINANCE:BTCUSDT"
+      },
+      {
+        "description": "ethereum",
+        "proName": "BINANCE:ETHUSD"
+      },
+      {
+        "description": "gold",
+        "proName": "OANDA:XAUUSD"
+      },
+      {
+        "description": "",
+        "proName": "FX:EURUSD"
+      },
+      {
+        "description": "litecoin",
+        "proName": "BINANCE:LTCUSDT"
+      },
+      {
+        "description": "apple",
+        "proName": "NASDAQ:AAPL"
+      },
+      {
+        "description": "meta",
+        "proName": "NASDAQ:META"
+      },
+      {
+        "description": "netflix",
+        "proName": "NASDAQ:NFLX"
+      },
+      {
+        "description": "gold futures",
+        "proName": "COMEX:GC1!"
+      },
+      {
+        "description": "xrp",
+        "proName": "BINANCE:XRPUSDT"
+      },
+      {
+        "description": "dow jones 30",
+        "proName": "BLACKBULL:US30"
+      },
+      {
+        "description": "USD index",
+        "proName": "TVC:DXY"
+      }
+    ],
+    "showSymbolLogo": true,
+    "colorTheme": "light",
+    "isTransparent": false,
+    "displayMode": "adaptive",
+    "locale": "en"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'basic_app:home' %}"><img src="{% static 'images/icon.png' %}" alt=""/></a>
@@ -79,13 +146,13 @@
                                 <a class="nav-link "
                                    href="{% url 'basic_app:contact' %}">Contact</a>
                             </li>
-                                                
+
                     </ul>
                     <div class="header-right-btn">
                                                 <a href="{% url 'basic_app:register' %}" class="site-btn-sm primary-btn"><i class="fas fa-user"></i>Register</a>
                             <a href="{% url 'basic_app:login' %}" class="site-btn-sm grad-btn ms-2"><i class="fa fa-sign-in"></i>Account</a>
-    
-                        
+
+
                         <div class="color-switcher">
                             <i icon-name="moon" class="dark-icon" data-mode="dark"></i>
                             <i icon-name="sun" class="light-icon" data-mode="light"></i>
@@ -96,18 +163,18 @@
         </nav>
     </header>
     <!--/Header Area End-->
-    
+
                         <section class="banner light-blue-bg">
         <div class="slider-thumb"></div>
         <div class="container">
             <div class="row">
                 <div class="col-xl-7 col-lg-7 col-md-12 col-12">
-                    <div class="banner-content">
+                    <div class="banner-content"> <br><br><br>
                         <h2 data-aos="fade-right" data-aos-duration="1000">
-                            Fund Tech Trade Holdings Ltd
+                            Aim Capital Market Holdings Ltd
                         </h2>
                         <p data-aos="fade-up" data-aos-duration="1500">
-                            is a global company that operates one of the largest cryptocurrency mining and exchange systems in terms of daily trading volume of cryptocurrencies. wth and get the potential service.
+                            is a global company that operates one of the largest cryptocurrency mining and exchange systems in terms of daily trading volume of cryptocurrencies. We offer the best trading service.
                         </p>
                         <div class="banner-anchors">
                             <a href="{% url 'basic_app:register' %}" class="site-btn grad-btn mb-2" data-aos="fade-up"
@@ -143,7 +210,7 @@
                 </div>
             </div>
             <div class="row">
-                
+
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                         <div class="single-investment-plan">
                             <img
@@ -151,7 +218,7 @@
                                 src="{% static 'images/schema1.png' %}"
                                 alt=""
                             />
-                            
+
                             <h3>Starter Plan</h3>
                             <p>Daily 26.8%</p>
                             <ul>
@@ -169,7 +236,7 @@
                             <a href="{% url 'basic_app:login' %}" class="site-btn grad-btn w-100 centered"><i class="fa-solid fa-check"></i>Invest Now</a>
                         </div>
                     </div>
-                
+
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                         <div class="single-investment-plan">
                             <img
@@ -178,7 +245,7 @@
                                 alt=""
                             />
                                                         <div class="feature-plan">BEST SCHEMA</div>
-                            
+
                             <h3>Standard Plan</h3>
                             <p>Weekly 1.2%</p>
                             <ul>
@@ -196,7 +263,7 @@
                             <a href="{% url 'basic_app:login' %}" class="site-btn grad-btn w-100 centered"><i class="fa-solid fa-check"></i>Invest Now</a>
                         </div>
                     </div>
-                
+
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                         <div class="single-investment-plan">
                             <img
@@ -204,7 +271,7 @@
                                 src="{% static 'images/schema3.png' %}"
                                 alt=""
                             />
-                            
+
                             <h3>Advanced Plan</h3>
                             <p>Hour $11</p>
                             <ul>
@@ -222,7 +289,7 @@
                             <a href="{% url 'basic_app:login' %}" class="site-btn grad-btn w-100 centered"><i class="fa-solid fa-check"></i>Invest Now</a>
                         </div>
                     </div>
-                
+
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                         <div class="single-investment-plan">
                             <img
@@ -230,7 +297,7 @@
                                 src="{% static 'images/schema4.png' %}"
                                 alt=""
                             />
-                            
+
                             <h3>Pro Plan</h3>
                             <p>Daily $10</p>
                             <ul>
@@ -253,6 +320,28 @@
     </section>
                         <section class="section-style light-blue-bg">
         <div class="container">
+
+
+            <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+  {
+  "defaultColumn": "overview",
+  "screener_type": "crypto_mkt",
+  "displayCurrency": "USD",
+  "colorTheme": "dark",
+  "isTransparent": false,
+  "locale": "en",
+  "width": "100%",
+  "height": 550
+}
+  </script>
+</div>
+<!-- TradingView Widget END --> <br>
+
+
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-12">
                     <div class="section-title text-center">
@@ -294,7 +383,7 @@
                                             ($1000
                                             )
                                         </option>
-                                    
+
                                 </select>
                             </div>
                             <div class="single-box">
@@ -305,11 +394,11 @@
                                     <span class="input-group-text" id="basic-addon1">USD</span>
                                 </div>
                             </div>
-    
+
                             <div class="single-box">
                                 <div class="input-info-text charge " id="amount-level"></div>
                             </div>
-    
+
                             <div class="single-box">
                                 <label for="">Profit: <span id="profit-label"></span></label>
                                 <div class="input-group mb-0">
@@ -328,8 +417,14 @@
     </section>
                         <section class="how-it-works section-style-3">
         <div class="container">
+
+
+
+
+
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-12">
+
                     <div class="section-title text-center">
                         <h4 data-aos="fade-down" data-aos-duration="2000">How It Works</h4>
                         <h2 data-aos="fade-down" data-aos-duration="1500">
@@ -427,12 +522,49 @@
                             </p>
                         </div>
                     </div>
-                
+
             </div>
         </div>
     </section>
                         <section class="section-style-2 light-blue-bg">
         <div class="container">
+
+            <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+  {
+  "allow_symbol_change": true,
+  "calendar": false,
+  "details": false,
+  "hide_side_toolbar": true,
+  "hide_top_toolbar": false,
+  "hide_legend": false,
+  "hide_volume": false,
+  "hotlist": false,
+  "interval": "D",
+  "locale": "en",
+  "save_image": true,
+  "style": "1",
+  "symbol": "BINANCE:BTCUSDT",
+  "theme": "dark",
+  "timezone": "Etc/UTC",
+  "backgroundColor": "#0F0F0F",
+  "gridColor": "rgba(242, 242, 242, 0.06)",
+  "watchlist": [],
+  "withdateranges": false,
+  "compareSymbols": [],
+  "studies": [],
+  "width": "100%",
+  "height": 610
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+
+
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-12">
                     <div class="section-title text-center">
@@ -451,8 +583,33 @@
                         </div>
                         <div class="site-card-body">
                             <div class="site-transactions">
-                                
-                                    
+
+
+
+                                    <div class="single">
+                                        <div class="left">
+                                            <div class="icon">
+                                                <i icon-name="user-plus"></i>
+                                            </div>
+                                            <div class="content">
+                                                <div class="title">Mason Owen</div>
+                                                <div class="date">April 11, 2025 07:03</div>
+                                            </div>
+                                        </div>
+                                        <div class="middle">
+                                                                                        <div class="status site-badge badge-success">Active</div>
+                                                                                </div>
+                                        <div class="right">
+                                            <div class="amount">
+                                                <div class="net in">
+                                                    +0 USD</div>
+                                                <div class="total">300 USD</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
                                     <div class="single">
                                         <div class="left">
                                             <div class="icon">
@@ -460,7 +617,7 @@
                                             </div>
                                             <div class="content">
                                                 <div class="title">Leyla Ghasempour</div>
-                                                <div class="date">Dec 01, 2023 09:03</div>
+                                                <div class="date">Jun 07, 2025 09:03</div>
                                             </div>
                                         </div>
                                         <div class="middle">
@@ -474,16 +631,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                
-                                    
+
+
                                     <div class="single">
                                         <div class="left">
                                             <div class="icon">
                                                 <i icon-name="user-plus"></i>
                                             </div>
                                             <div class="content">
-                                                <div class="title">Brigh Sunday</div>
-                                                <div class="date">Nov 07, 2023 21:21</div>
+                                                <div class="title">Tyler Jones</div>
+                                                <div class="date">July 03, 2025 21:21</div>
                                             </div>
                                         </div>
                                         <div class="middle">
@@ -497,7 +654,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -509,50 +666,77 @@
                         </div>
                         <div class="site-card-body">
                             <div class="site-transactions">
-                                                                <div class="single">
+
+                                <div class="single">
                                         <div class="left">
                                             <div class="icon">
                                                 <i icon-name="arrow-up-left"></i>
                                             </div>
                                             <div class="content">
                                                 <div class="title">Withdraw With Mobile Money-USD</div>
-                                                <div class="date">Dec 28 2023 08:13</div>
+                                                <div class="date">June 04 2025 05:16</div>
                                             </div>
                                         </div>
                                         <div class="middle">
-    
-    
+
+
                                                                                         <div class="status site-badge badge-success">Success</div>
-                                            
+
+                                        </div>
+                                        <div class="right">
+                                            <div class="amount">
+                                                                                                <div class="net in">+3140 USD</div>
+
+                                                <div class="total">3140 USD</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="single">
+                                        <div class="left">
+                                            <div class="icon">
+                                                <i icon-name="arrow-up-left"></i>
+                                            </div>
+                                            <div class="content">
+                                                <div class="title">Withdraw With Mobile Money-USD</div>
+                                                <div class="date">June 13 2025 08:13</div>
+                                            </div>
+                                        </div>
+                                        <div class="middle">
+
+
+                                                                                        <div class="status site-badge badge-success">Success</div>
+
                                         </div>
                                         <div class="right">
                                             <div class="amount">
                                                                                                 <div class="net in">+7140 USD</div>
-                                                
+
                                                 <div class="total">7140 USD</div>
                                             </div>
                                         </div>
                                     </div>
-                                                                <div class="single">
+                                    <div class="single">
                                         <div class="left">
                                             <div class="icon">
                                                 <i icon-name="arrow-up-left"></i>
                                             </div>
                                             <div class="content">
                                                 <div class="title">Withdraw With BTC-USD</div>
-                                                <div class="date">Dec 27 2023 03:01</div>
+                                                <div class="date">July 03 2025 03:01</div>
                                             </div>
                                         </div>
                                         <div class="middle">
-    
-    
-                                                                                        <div class="status site-badge badge-pending">Pending</div>
-                                            
+
+
+                                                                                        <div class="status site-badge badge-success">Success</div>
+
                                         </div>
                                         <div class="right">
                                             <div class="amount">
-                                                
-                                                <div class="total">20.4 USD</div>
+                                                <div class="net in">+2000.4 USD</div>
+                                                <div class="total">2000.4 USD</div>
                                             </div>
                                         </div>
                                     </div>
@@ -567,6 +751,26 @@
         <div class="bat-right" style="background: url(https://valortechtrade.com/assets/global/images/XIeEtiyw8HzFLOK5lLch.png) repeat;" data-aos="fade-down-left"
              data-aos-duration="2000"></div>
         <div class="container">
+
+            <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+  {
+  "market": "forex",
+  "showToolbar": true,
+  "defaultColumn": "overview",
+  "defaultScreen": "general",
+  "isTransparent": false,
+  "locale": "en",
+  "colorTheme": "dark",
+  "width": "100%",
+  "height": 550
+}
+  </script>
+</div>
+<!-- TradingView Widget END --> <br>
             <div class="row">
                 <div class="col-xl-6">
                     <div class="why-choose-us-img" data-aos="fade-right" data-aos-duration="2000">
@@ -579,7 +783,7 @@
                             <h4 data-aos="fade-down" data-aos-duration="1500">Why Choose Us</h4>
                             <h2 data-aos="fade-down" data-aos-duration="1000">Explore Why You Will Choose Us.</h2>
                         </div>
-    
+
                                                 <div class="single" data-aos="fade-down" data-aos-duration="2000">
                                 <div class="icons">
                                     <div class="icon">
@@ -632,7 +836,7 @@
                                     </p>
                                 </div>
                             </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -677,6 +881,35 @@
         <div class="bat-left" style="background: url(https://valortechtrade.com/assets/global/images/sPRwlwtyJVvQ1DRqoACh.png) repeat;" data-aos="fade-down-right"
              data-aos-duration="2000"></div>
         <div class="container">
+
+            <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js" async>
+  {
+  "dataSource": "SPX500",
+  "blockSize": "market_cap_basic",
+  "blockColor": "change",
+  "grouping": "sector",
+  "locale": "en",
+  "symbolUrl": "",
+  "colorTheme": "dark",
+  "exchanges": [],
+  "hasTopBar": false,
+  "isDataSetEnabled": false,
+  "isZoomEnabled": true,
+  "hasSymbolTooltip": true,
+  "isMonoSize": false,
+  "width": "100%",
+  "height": "550"
+}
+  </script>
+</div>
+<!-- TradingView Widget END --> <br>
+
+
+
             <div class="row justify-content-center">
                 <div class="col-xl-8">
                     <div class="section-title centered">
@@ -803,13 +1036,13 @@
                             </div>
                             <div class="content">
                                 <div class="meta">
-                                    <div class="date">17 November 2022</div>
+                                    <div class="date">17 March 2025</div>
                                 </div>
                                 <div class="title">
                                     <h3><a href="{% url 'basic_app:blog-first' %}">Yearly Best Investment authority here</a></h3>
                                 </div>
                                 <div class="des">
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of cla...
+                                    <p>Our company now offer the best services for it's customers. It has roots in a piece of cla...
                                 </div>
                                 <div class="link">
                                     <a href="{% url 'basic_app:blog-first' %}">Continue Reading</a>
@@ -824,13 +1057,13 @@
                             </div>
                             <div class="content">
                                 <div class="meta">
-                                    <div class="date">17 November 2022</div>
+                                    <div class="date">05 June 2025</div>
                                 </div>
                                 <div class="title">
-                                    <h3><a href="{% url 'basic_app:blog-second' %}">Fund Tech Trade allows to Invest jointly all the way</a></h3>
+                                    <h3><a href="{% url 'basic_app:blog-second' %}">Aim Capital Market allows to Invest jointly all the way</a></h3>
                                 </div>
                                 <div class="des">
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of cla...
+                                    <p>Contrary to popular belief, It has roots in a piece of cla...
                                 </div>
                                 <div class="link">
                                     <a href="{% url 'basic_app:blog-second' %}">Continue Reading</a>
@@ -838,7 +1071,37 @@
                             </div>
                         </div>
                     </div>
-                
+
+
+                    <div class="col-xl-4 col-lg-6 col-sm-12">
+                        <div class="single-blog" data-aos="fade-down" data-aos-duration="1000">
+
+
+                            <div class="content">
+
+                                    <div class="news-widget">
+                                    <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+  {
+  "displayMode": "regular",
+  "feedMode": "all_symbols",
+  "colorTheme": "dark",
+  "isTransparent": false,
+  "locale": "en",
+  "width": "100%",
+  "height": 603
+}
+  </script>
+</div>
+<!-- TradingView Widget END --> </div>
+
+                            </div>
+                        </div>
+                    </div>
+
             </div>
         </div>
     </section>
@@ -923,12 +1186,12 @@
                             <img src="{% static 'images/bitcoin.png' %}" alt=""/>
                         </div>
                     </div>
-                
+
             </div>
         </div>
     </section>
-                       
-        
+
+
     <!--Footer Area-->
     <footer class="footer dark-blue-bg section-style-2">
         <div class="bat-right" style="background: url(https://valortechtrade.com/assets/global/images/GAH1nccf5XhjretvfsYT.png) repeat;"
@@ -951,8 +1214,8 @@
                 </div>
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
                     <div class="row">
-    
-                        
+
+
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                 <div class="footer-widget" data-aos="fade-down" data-aos-duration="1500">
                                     <h4>Base Navigation</h4>
@@ -962,13 +1225,13 @@
                                                                                                                                                                                     <li><a href="{% url 'basic_app:login' %}">Account Login</a></li>
                                                                                                                                                                                     <li><a href="{% url 'basic_app:blog' %}">Blog</a></li>
                                                                                                                                                                                     <li><a href="{% url 'basic_app:contact' %}">Contact</a></li>
-                                                                                        
+
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-    
-                        
+
+
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                 <div class="footer-widget" data-aos="fade-down" data-aos-duration="1500">
                                     <h4>Important Links</h4>
@@ -978,13 +1241,13 @@
                                                                                                                                                                                     <li><a href="{% url 'basic_app:rankings' %}">Ranking</a></li>
                                                                                                                                                                                     <li><a href="{% url 'basic_app:schema' %}">Schema</a></li>
                                                                                                                                                                                     <li><a href="{% url 'basic_app:faq' %}">FAQ</a></li>
-                                                                                        
+
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-    
-                        
+
+
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                 <div class="footer-widget" data-aos="fade-down" data-aos-duration="1500">
                                     <h4>Company Essentials</h4>
@@ -992,14 +1255,14 @@
                                         <ul>
                                                                                                                                         <li><a href="{% url 'basic_app:terms' %}">Terms and Conditions</a></li>
                                                                                                                                                                                     <li><a href="{% url 'basic_app:about-us' %}">About</a></li>
-                                                                                        
+
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-    
-                        
-    
+
+
+
                     </div>
                 </div>
             </div>
@@ -1015,7 +1278,7 @@
         </div>
     </footer>
     <!--Footer Area End-->
-    
+
     <div class="caches-privacy cookiealert" hidden>
             <div class="content">
                 <p>Please allow us to collect data about how you use our website. We will use it to improve our website, make your browsing experience and our business decisions better. Learn more <a href="{% url 'basic_app:privacy' %}"
@@ -1023,14 +1286,14 @@
             </div>
             <button class="site-btn blue-btn acceptcookies">Accept All</button>
         </div>
-    
-    
+
+
         <script src="{% static 'javascript/jquery.min.js' %}"></script>
         <script src="{% static 'javascript/jquery-migrate.js' %}"></script>
-        
+
         <script src="{% static 'javascript/bootstrap.bundle.min.js' %}"></script>
         <script src="{% static 'javascript/scrollUp.min.js' %}"></script>
-        
+
         <script src="{% static 'javascript/owl.carousel.min.js' %}"></script>
         <script src="{% static 'javascript/waypoints.min.js' %}"></script>
         <script src="{% static 'javascript/jquery.counterup.min.js' %}"></script>
@@ -1042,7 +1305,7 @@
         <script src="{% static 'javascript/frontend.main.js' %}"></script>
         <script src="{% static 'javascript/cookie.js' %}"></script>
         <script src="{% static 'javascript/custom.js' %}"></script>
-    
+
         <script>
             (function ($) {
                 'use strict';
@@ -1055,83 +1318,83 @@
                 });
             })(jQuery);
         </script>
-    
+
     <script type="text/javascript" src="{% static 'javascript/notify.js' %}"></script>     <script>
             $('#selectPlan').on('change',function (e) {
                 e.preventDefault();
                 "use strict"
-    
+
                 var id = $(this).val();
-    
+
                 if (id != 0) {
-    
+
                     var invest_amount = $("#enter-amount");
                     invest_amount.val('');
                     invest_amount.attr('readonly', false);
-    
+
                     var url = 'https://valortechtrade.com/schema-select/:id';
                     url = url.replace(':id', id);
-    
+
                     $.ajax({
                         url: url, success: function (result) {
                             $('#amount-level').html('Capital Back:' + result.capital_back);
                             $('#profit-label').html(result.return_interest + ' - ' + result.number_period);
-    
+
                             if (result.invest_amount > 0) {
                                 invest_amount.val(result.invest_amount);
                                 invest_amount.attr('readonly', true);
                             }
-    
+
                             if (result.number_period === 'Unlimited Times') {
                                 $('#profit').val('Unlimited');
                             } else {
-    
+
                                 if (result.interest_type === 'percentage') {
                                     $('#profit').val(calPercentage(result.invest_amount, result.interest) * result.period);
-    
+
                                 } else {
                                     $('#profit').val(result.interest * result.period);
                                 }
                             }
-    
+
                         }
                     });
                 }
-    
+
             })
-    
+
             $('#enter-amount').on('keyup',function (e) {
                 e.preventDefault();
                 "use strict"
                 var id = $('#selectPlan').val();
-    
+
                 if (id != 0) {
                     var url = 'https://valortechtrade.com/schema-select/:id';
                     url = url.replace(':id', id);
-    
+
                     $.ajax({
                         url: url, success: function (result) {
-    
+
                             if (result.number_period === 'Unlimited Times') {
                                 $('#profit').val('Unlimited');
                             } else {
-    
+
                                 if (result.interest_type === 'percentage') {
                                     var invest_amount = $("#enter-amount").val();
                                     $('#profit').val(calPercentage(invest_amount, result.interest) * result.period);
-    
+
                                 } else {
                                     $('#profit').val(result.interest * result.period);
                                 }
                             }
-    
+
                         }
                     });
                 }
-    
+
             })
-    
-    
+
+
         </script>
         <script>
             // Color Switcher
@@ -1145,6 +1408,20 @@
 
 
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
-    
+
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/675866e8af5bfec1dbd9e469/1ieol3vh8';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
 </body>
 </html>

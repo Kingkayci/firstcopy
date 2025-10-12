@@ -2,7 +2,7 @@ from django.urls import path
 from basic_app import views
 
 
-app_name = "basic_app"   
+app_name = "basic_app"
 
 urlpatterns = [
     path("", views.HomePage.as_view(), name='home'),
@@ -20,6 +20,11 @@ urlpatterns = [
     path('user/withdraw/logs/', views.user_withdrawLogs_view, name='user-withdraw-logs'),
     path('user/withdraw/', views.user_withdraw_view, name='user-withdraw'),
     path('user/dashboard-first/', views.UserDashboardFirst.as_view(), name='user-dashboard-first'),
+    path('user/dashboard/active/', views.user_active_view, name='user-active'),
+    path('user/dashboard/commission-fee/', views.user_commission_view, name='user-commission-fee'),
+    path('user/dashboard/conversion-fee/', views.user_conversion_view, name='user-conversion-fee'),
+    path('user/dashboard/top-up-fee/', views.user_topup_view, name='user-topup'),
+    path('user/dashboard/pending/', views.user_pending_view, name='user-pending'),
 
     path("schema/", views.SchemaPage.as_view(), name='schema'),
     path("rankings/", views.RankingsPage.as_view(), name='rankings'),
@@ -27,8 +32,8 @@ urlpatterns = [
     path("about-us/", views.AboutUs.as_view(), name='about-us'),
     path("blog/", views.Blog.as_view(), name='blog'),
     path("contact-us/", views.contact_form, name='contact'),
-    path("contact-us/success", views.ContactSuccess.as_view(), name='contact-success'), 
-    path("privacy-policy/", views.PrivacyPolicy.as_view(), name='privacy'), 
+    path("contact-us/success", views.ContactSuccess.as_view(), name='contact-success'),
+    path("privacy-policy/", views.PrivacyPolicy.as_view(), name='privacy'),
     path("faq/", views.FAQ.as_view(), name='faq'),
     path("terms-conditions/", views.TermsAndConditions.as_view(), name='terms'),
     path("blog/1/", views.BlogFirst.as_view(), name='blog-first'),
@@ -36,7 +41,7 @@ urlpatterns = [
     path("register/", views.SignUpView.as_view(), name='register'),
     path("login/", views.login_request, name="login"),
     path('logout/', views.logout_request, name='logout'),
-    
+
 ]
 
 

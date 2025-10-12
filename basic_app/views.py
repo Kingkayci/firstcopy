@@ -33,13 +33,13 @@ def upload_receipt(request):
             return redirect('basic_app:user-verify-receipt')
     else:
         form = ReceiptUploadForm()
-    
+
     # Retrieve the AccountBalance instance for the logged-in user
     try:
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/deposit.html', context={'account_balance':account_balance, 'receipt_form':form})
 
@@ -58,9 +58,9 @@ def upload_kyc(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
-    return render(request, template_name='user/kyc.html', context={'account_balance':account_balance, 'kyc_form':form})   
+    return render(request, template_name='user/kyc.html', context={'account_balance':account_balance, 'kyc_form':form})
 
 
 
@@ -74,7 +74,7 @@ def user_dashboard_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/dashboard.html', context={'account_balance':account_balance})
 
@@ -86,7 +86,7 @@ def user_schemaLogs_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/schema-logs.html', context={'account_balance':account_balance})
 
@@ -98,7 +98,7 @@ def user_withdrawLogs_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/withdraw-logs.html', context={'account_balance':account_balance})
 
@@ -110,7 +110,7 @@ def user_depositLogs_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/deposit-logs.html', context={'account_balance':account_balance})
 
@@ -123,10 +123,10 @@ def user_deposit_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/deposit.html', context={'account_balance':account_balance})
-    
+
 
 @login_required
 def user_rankingBadge_view(request):
@@ -135,7 +135,7 @@ def user_rankingBadge_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/ranking-badge.html', context={'account_balance':account_balance})
 
@@ -146,7 +146,7 @@ def user_referral_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/referral.html', context={'account_balance':account_balance})
 
@@ -157,7 +157,7 @@ def user_schemas_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/schemas.html', context={'account_balance':account_balance})
 
@@ -168,7 +168,7 @@ def user_transactions_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/transactions.html', context={'account_balance':account_balance})
 
@@ -179,7 +179,7 @@ def user_verifyKyc_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/verify-kyc.html', context={'account_balance':account_balance})
 
@@ -190,7 +190,7 @@ def user_verifyReceipt_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/verify-receipt.html', context={'account_balance':account_balance})
 
@@ -201,9 +201,74 @@ def user_withdraw_view(request):
         account_balance = AccountBalance.objects.get(user=request.user)
     except AccountBalance.DoesNotExist:
         account_balance = None  # Handle the case where AccountBalance does not exist for the user
-    
+
     # Pass the account_balance instance to the template
     return render(request, template_name='user/withdraw.html', context={'account_balance':account_balance})
+
+
+
+
+
+
+@login_required
+def user_active_view(request):
+    # Retrieve the AccountBalance instance for the logged-in user
+    try:
+        account_balance = AccountBalance.objects.get(user=request.user)
+    except AccountBalance.DoesNotExist:
+        account_balance = None  # Handle the case where AccountBalance does not exist for the user
+
+    # Pass the account_balance instance to the template
+    return render(request, template_name='user/active.html', context={'account_balance':account_balance})
+
+@login_required
+def user_commission_view(request):
+    # Retrieve the AccountBalance instance for the logged-in user
+    try:
+        account_balance = AccountBalance.objects.get(user=request.user)
+    except AccountBalance.DoesNotExist:
+        account_balance = None  # Handle the case where AccountBalance does not exist for the user
+
+    # Pass the account_balance instance to the template
+    return render(request, template_name='user/commission-fee.html', context={'account_balance':account_balance})
+
+
+@login_required
+def user_conversion_view(request):
+    # Retrieve the AccountBalance instance for the logged-in user
+    try:
+        account_balance = AccountBalance.objects.get(user=request.user)
+    except AccountBalance.DoesNotExist:
+        account_balance = None  # Handle the case where AccountBalance does not exist for the user
+
+    # Pass the account_balance instance to the template
+    return render(request, template_name='user/conversion-fee.html', context={'account_balance':account_balance})
+
+@login_required
+def user_topup_view(request):
+    # Retrieve the AccountBalance instance for the logged-in user
+    try:
+        account_balance = AccountBalance.objects.get(user=request.user)
+    except AccountBalance.DoesNotExist:
+        account_balance = None  # Handle the case where AccountBalance does not exist for the user
+
+    # Pass the account_balance instance to the template
+    return render(request, template_name='user/top-up.html', context={'account_balance':account_balance})
+
+@login_required
+def user_pending_view(request):
+    # Retrieve the AccountBalance instance for the logged-in user
+    try:
+        account_balance = AccountBalance.objects.get(user=request.user)
+    except AccountBalance.DoesNotExist:
+        account_balance = None  # Handle the case where AccountBalance does not exist for the user
+
+    # Pass the account_balance instance to the template
+    return render(request, template_name='user/pending.html', context={'account_balance':account_balance})
+
+
+
+
 
 def login_request(request):
     if request.method == 'POST':

@@ -26,10 +26,10 @@
         #logout a { color: white; }
         @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;500&display=swap');
         * { font-size: 0.92rem; font-family: 'Manrope', sans-serif;}
-       
+
     </style>
 
-    <title>FUND TECH TRADE- Deposit</title>
+    <title>AIM CAPITAL MARKET- Deposit</title>
 </head>
 
 <body class="dark-theme">
@@ -77,8 +77,8 @@
                                                     <option
                                 value="https://valortechtrade.com/language-update?name=fr" >France</option>
                                             </select> -->
-                    <div id="google_translate_element"></div>                                       
-                
+                    <div id="google_translate_element"></div>
+
                 </div>
 
                 <div class="single-right">
@@ -91,7 +91,7 @@
                         <i class="fas fa-user"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        
+
                         <li id="logout">
                                 <a href="{% url 'basic_app:logout' %}"><i class="fa-solid fa-power-off"></i>LOGOUT</a>
                         </li>
@@ -133,7 +133,7 @@
                     <a href="{% url 'basic_app:user-dashboard' %}">
                         <i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
                 </li>
-    
+
                 <li class="side-nav-item">
                     <a href="{% url 'basic_app:user-schemas' %}">
                         <i class="fa-regular fa-square-check"></i><span>All Schema</span></a>
@@ -142,13 +142,13 @@
                     <a href="{% url 'basic_app:user-schema-logs' %}">
                         <i class="fa-solid fa-copy"></i><span>Schema Logs</span></a>
                 </li>
-    
+
                 <li class="side-nav-item ">
                     <a href="{% url 'basic_app:user-transactions' %}">
                         <i class="fa-solid fa-inbox"></i><span>All Transactions</span></a>
                 </li>
-    
-    
+
+
                 <li class="side-nav-item  active">
                     <a href="{% url 'basic_app:user-deposit' %}">
                         <i class="fa-solid fa-money-check-dollar"></i><span>Add Money</span></a>
@@ -157,12 +157,12 @@
                     <a href="{% url 'basic_app:user-deposit-logs' %}">
                         <i class="fa-solid fa-money-bill"></i><span>Add Money Log</span></a>
                 </li>
-    
+
                 <!-- <li class="side-nav-item ">
                     <a href="https://valortechtrade.com/user/wallet-exchange">
                         <i class="fa-solid fa-money-bill-transfer"></i><span>Wallet Exchange</span></a>
                 </li>
-    
+
                 <li class="side-nav-item   ">
                     <a href="https://valortechtrade.com/user/send-money">
                         <i class="fa-solid fa-money-check-dollar"></i><span>Send Money</span></a>
@@ -171,7 +171,7 @@
                     <a href="https://valortechtrade.com/user/send-money/log">
                         <i class="fa-solid fa-cloud"></i><span>Send Money Log</span></a>
                 </li> -->
-    
+
                 <li class="side-nav-item   ">
                     <a href="{% url 'basic_app:user-withdraw' %}">
                         <i class="fa-solid fa-building-columns"></i><span>Withdraw</span></a>
@@ -180,18 +180,18 @@
                     <a href="{% url 'basic_app:user-withdraw-logs' %}">
                         <i class="fa-solid fa-credit-card"></i><span>Withdraw Logs</span></a>
                 </li>
-    
+
                 <li class="side-nav-item ">
                     <a href="{% url 'basic_app:user-ranking' %}">
                         <i class="fa-solid fa-star"></i><span>Ranking Badge</span></a>
                 </li>
-    
+
                                 <li class="side-nav-item ">
                         <a href="{% url 'basic_app:user-referral' %}">
                             <i class="fa-solid fa-people-group"></i><span>Referral</span></a>
                     </li>
-                
-                
+
+
                 <li class="side-nav-item">
                     <a href="{% url 'basic_app:logout' %}"><i class="fa-solid fa-power-off"></i>LOGOUT</a>
                 </li>
@@ -204,7 +204,7 @@
             <div class="main-content">
                 <div class="section-gap">
                     <div class="container-fluid">
-                                                
+
                             <div class="row">
             <div class="col">
                 <div class="alert site-alert alert-dismissible fade show" role="alert">
@@ -239,37 +239,53 @@
                                 <div class="number">01</div>
                                 <div class="content">
                                     <h4>Deposit USDT wallet address</h4>
-                                    <input type="text" value="usdt" class="w-address" id="refLink1"/>
+                                    <input type="text" value="TTmomx6rDPbrJP8XQT3UwCvdawBjR8tcoT"
+                                    class="w-address" id="refLink1"/>
                                     <button type="submit" onclick="copyRef1()">
                                         <i class="fas fa-copy"></i>
                                         <span class="address-copy" id="copy">Copy</span>
                                         <input id="copied" hidden value="Copied">
                                     </button>
-                                </div> 
+                                </div>
                             </div>
                             <div class="single-step current">
                                 <div class="number">02</div>
                                 <div class="content">
                                     <h4>Deposit ETH wallet address</h4>
-                                    <input type="text" value="ethereum" class="w-address" id="refLink2"/>
+                                    <input type="text" value="0x7cea297ca7a1342b41503dd1ec055a6316ab2326"
+                                    class="w-address" id="refLink2"/>
                                     <button type="submit" onclick="copyRef2()">
                                         <i class="fas fa-copy"></i>
                                         <span class="address-copy" id="copy">Copy</span>
                                         <input id="copied" hidden value="Copied">
                                     </button>
-                                </div> 
+                                </div>
                             </div>
                             <div class="single-step current">
                                 <div class="number">03</div>
                                 <div class="content">
                                     <h4>Deposit BTC wallet address</h4>
-                                    <input type="text" value="bitcoin" class="w-address" id="refLink3"/>
+                                    <input type="text" value="19MfwWG293DmuEVRqcRbZeLMn2fYdgdHUF"
+                                    class="w-address" id="refLink3"/>
                                     <button type="submit" onclick="copyRef3()">
                                         <i class="fas fa-copy"></i>
                                         <span class="address-copy" id="copy">Copy</span>
                                         <input id="copied" hidden value="Copied">
                                     </button>
-                                </div> 
+                                </div>
+                            </div>
+                            <div class="single-step current">
+                                <div class="number">04</div>
+                                <div class="content">
+                                    <h4>Deposit TRC wallet address</h4>
+                                    <input type="text" value="TTmomx6rDPbrJP8XQT3UwCvdawBjR8tcoT"
+                                    class="w-address" id="refLink4"/>
+                                    <button type="submit" onclick="copyRef4()">
+                                        <i class="fas fa-copy"></i>
+                                        <span class="address-copy" id="copy">Copy</span>
+                                        <input id="copied" hidden value="Copied">
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -311,10 +327,10 @@
 
 <script src="{% static 'javascript/jquery.min.js' %}"></script>
     <script src="{% static 'javascript/jquery-migrate.js' %}"></script>
-    
+
     <script src="{% static 'javascript/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'javascript/scrollUp.min.js' %}"></script>
-    
+
     <script src="{% static 'javascript/owl.carousel.min.js' %}"></script>
     <script src="{% static 'javascript/waypoints.min.js' %}"></script>
     <script src="{% static 'javascript/jquery.counterup.min.js' %}"></script>
@@ -342,7 +358,7 @@ $.scrollUp({
 })(jQuery);
 </script>
 
-<script type="text/javascript" src="{% static 'javascript/notify.js' %}"></script>    
+<script type="text/javascript" src="{% static 'javascript/notify.js' %}"></script>
 <script>
 function copyRef1() {
 /* Get the text field */
@@ -367,7 +383,7 @@ alert('USDT Address has been copied to the clipboard');
     /* Copy the text inside the text field */
     document.execCommand('copy');
     alert('ETH Address has been copied to the clipboard');
-    
+
     }
     </script>
 
@@ -381,7 +397,21 @@ alert('USDT Address has been copied to the clipboard');
     /* Copy the text inside the text field */
     document.execCommand('copy');
     alert('BTC Address has been copied to the clipboard');
-    
+
+    }
+    </script>
+
+    <script>
+    function copyRef4() {
+    /* Get the text field */
+    var copyApi = document.getElementById("refLink4");
+    /* Select the text field */
+    copyApi.select();
+    copyApi.setSelectionRange(0, 999999999); /* For mobile devices */
+    /* Copy the text inside the text field */
+    document.execCommand('copy');
+    alert('TRC Address has been copied to the clipboard');
+
     }
     </script>
 
@@ -398,9 +428,10 @@ $.get(url)
 
 <script type="text/javascript">
 function googleTranslateElementInit() {
-new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.FULL }, 'google_translate_element');
 }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
